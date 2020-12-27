@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/read-article
+    username: taichi-kanaya
+    password: 77777777
+  flyway:
+    url: jdbc:postgresql://localhost:5432/read-article
+    user: taichi-kanaya
+    password: 77777777
+    enabled: true

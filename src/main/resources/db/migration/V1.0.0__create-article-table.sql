@@ -1,9 +1,8 @@
 drop table if exists article;
 create table article (
     id serial not null,
-    title character varying[255] not null,
-    subtitle character varying[255],
+    title varchar(255) not null,
+    subtitle varchar(255),
     body text not null,
-    src  character varying[255] not null,
-    flex smallint
+    image_url  varchar(255) not null
 );

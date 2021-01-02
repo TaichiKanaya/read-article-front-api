@@ -7,11 +7,15 @@ import org.springframework.stereotype.Service
 @Service
 class ArticleService(private val articleMapper: ArticleMapper) {
 
-    companion object {
-        const val DISPLAY_PER_PAGE = 10
+    fun find(page: Int, limit: Int): List<Article> {
+        return articleMapper.find(limit, limit * (page - 1))
     }
 
-    fun findArticles(page: Int): List<Article> {
-        return articleMapper.find(DISPLAY_PER_PAGE, DISPLAY_PER_PAGE * (page - 1))
+    fun getTotal(): Int {
+        return articleMapper.getTotal()
+    }
+
+    fun findById(id: Int): Article {
+        return articleMapper.findById(id)
     }
 }
